@@ -96,8 +96,8 @@ class Task(Utility):
 	def stopCond(self): return self.Evals >= self.nFES or (False if self.nGEN == None else self.Iters >= self.nGEN)
 
 	def eval(self, A):
-		self.Evals += 1
 		if self.stopCond() or not self.isFeasible(A): return inf
+		self.Evals += 1		
 		X = A - self.o if self.o != None else A
 		X = self.fo(X) if self.fo != None else X
 		X = dot(X, self.M) if self.M != None else X
