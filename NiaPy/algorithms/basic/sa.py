@@ -34,8 +34,6 @@ class SimulatedAnnealing(Algorithm):
 		"""
 		super(SimulatedAnnealing, self).__init__(name='SimulatedAnnealing', sName='BBFA', **kwargs)
 
-	# Different cooling methods
-	# TODO: FIX DA BOJO STATIČNE METODE->bresz selfov in vse dobijo not kor parametre
 	def coolDelta(self, nFES):
 		return currentT - self.deltaT
 
